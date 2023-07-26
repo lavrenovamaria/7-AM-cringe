@@ -4,25 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="41d5a2b6-e37a-4e67-94a9-ff701d03ba7f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/core/domain/models/DayTime.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/core/domain/models/DriveApiClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/core/domain/models/DriveApiClientImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/core/domain/models/TelegramBot.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/core/domain/services/ImageService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/core/domain/services/ScheduleService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/presentation/controllers/CommandController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/presentation/controllers/CommandHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/presentation/controllers/MainController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/presentation/controllers/StartCommandHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/presentation/controllers/StopCommandHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/client_secret_622097366523-9m4v33a80bglu0ah7v3bdlgkdtlkgmnp.apps.googleusercontent.com.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="41d5a2b6-e37a-4e67-94a9-ff701d03ba7f" name="Changes" comment="make it more OOP">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/telegram/bot/engine/MainClass.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/domain/models/DriveApiClientImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/domain/models/DriveApiClientImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/domain/models/TelegramBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/domain/models/TelegramBot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/domain/services/ImageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/domain/services/ImageService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/presentation/controllers/CommandController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/presentation/controllers/CommandController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/presentation/controllers/CommandHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/presentation/controllers/CommandHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/presentation/controllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/presentation/controllers/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/presentation/controllers/StartCommandHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/presentation/controllers/StartCommandHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/presentation/controllers/StopCommandHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/presentation/controllers/StopCommandHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -287,8 +278,17 @@
       <workItem from="1681039578474" duration="12129000" />
       <workItem from="1681333220992" duration="48000" />
       <workItem from="1690301848016" duration="1844000" />
-      <workItem from="1690341892840" duration="28040000" />
+      <workItem from="1690341892840" duration="35401000" />
     </task>
+    <task id="LOCAL-00001" summary="make it more OOP">
+      <option name="closed" value="true" />
+      <created>1690383124693</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1690383124693</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -304,5 +304,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="make it more OOP" />
+    <option name="LAST_COMMIT_MESSAGE" value="make it more OOP" />
   </component>
 </project>

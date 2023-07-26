@@ -11,6 +11,8 @@ public class ImageService {
     private TelegramBot telegramBot;
     private DriveApiClient driveApiClient;
 
+    private int imageIndex = 1;
+
     public ImageService(TelegramBot telegramBot, DriveApiClient driveApiClient) {
         this.telegramBot = telegramBot;
         this.driveApiClient = driveApiClient;
@@ -20,10 +22,17 @@ public class ImageService {
         try {
             List<File> imageFiles = driveApiClient.getImagesFromDrive();
 
-            for (int i = 0; i < imageFiles.size(); i++) {
-                String chatId = chatIds.get(i);
+            // Send one image per day at 7 AM using imageIndex.
+            if (imageIndex < imageFiles.size()) {
                 String message = "Here is a picture for you!";
-                telegramBot.sendPhoto(chatId, message, imageFiles.get(i));
+                for (String chatId : chatIds) {
+                    telegramBot.sendPhoto(chatId, message, imageFiles.get(imageIndex));
+                }
+                imageIndex++;
+            }
+
+            if (imageIndex >= imageFiles.size()) {
+                imageIndex = 0; // Reset imageIndex if it exceeds the number of images.
             }
         } catch (IOException e) {
             e.printStackTrace();
