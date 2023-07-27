@@ -22,7 +22,6 @@ public class ImageService {
         try {
             List<File> imageFiles = driveApiClient.getImagesFromDrive();
 
-            // Send one image per day at 7 AM using imageIndex.
             if (imageIndex < imageFiles.size()) {
                 String message = "Here is a picture for you!";
                 for (String chatId : chatIds) {
@@ -32,7 +31,7 @@ public class ImageService {
             }
 
             if (imageIndex >= imageFiles.size()) {
-                imageIndex = 0; // Reset imageIndex if it exceeds the number of images.
+                imageIndex = 0;
             }
         } catch (IOException e) {
             e.printStackTrace();

@@ -12,6 +12,7 @@ import com.google.api.services.drive.model.File;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import presentation.controllers.CommandController;
 
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.security.GeneralSecurityException;
@@ -28,24 +29,22 @@ public class TelegramBot extends TelegramLongPollingBot {
 
     @Override
     public String getBotUsername() {
-        return "YourBotUsername";
+        return "MyIttyBittyBot";
     }
 
     @Override
     public String getBotToken() {
-        return "YourBotToken";
+        return "6020628537:AAHmE6xKAoysdbB9QlOHinZAH2q95GahjYg";
     }
 
     @Override
     public void onUpdateReceived(Update update) {
-        // Delegate the command handling to the CommandController.
         try {
             commandController.handleCommand(update);
         } catch (GeneralSecurityException | IOException e) {
             throw new RuntimeException(e);
         }
     }
-
 
     public void sendMessage(String chatId, String message) {
         SendMessage sendMessage = new SendMessage();

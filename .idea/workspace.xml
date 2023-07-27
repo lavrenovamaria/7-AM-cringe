@@ -5,15 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="41d5a2b6-e37a-4e67-94a9-ff701d03ba7f" name="Changes" comment="make it more OOP">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/client_secret.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/core/domain/models/DriveApiClientImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/domain/models/DriveApiClientImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/core/domain/models/TelegramBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/domain/models/TelegramBot.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/core/domain/services/ImageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/domain/services/ImageService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/presentation/controllers/CommandController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/presentation/controllers/CommandController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/presentation/controllers/CommandHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/presentation/controllers/CommandHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/presentation/controllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/presentation/controllers/MainController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/presentation/controllers/StartCommandHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/presentation/controllers/StartCommandHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/presentation/controllers/StopCommandHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/presentation/controllers/StopCommandHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/client_secret_622097366523-9m4v33a80bglu0ah7v3bdlgkdtlkgmnp.apps.googleusercontent.com.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +99,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/KotikShladkiy/Documents/7-AM-cringe/src/main/resources",
+    "last_opened_file_path": "C:/Users/lavre/IdeaProjects/7-AM-cringe/src/main/resources",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -110,22 +113,37 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\lavre\IdeaProjects\7-AM-cringe\src\main\resources" />
       <recent name="$PROJECT_DIR$/src/main/resources" />
       <recent name="C:\Users\lavre\Desktop\Бот\telegram-bot-master-bitty\" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\lavre\IdeaProjects\7-AM-cringe" />
       <recent name="$PROJECT_DIR$/src/main/java" />
       <recent name="C:\Users\lavre\Desktop\Бот\telegram-bot-master-bitty" />
       <recent name="C:\Users\lavre\Desktop\Бот\telegram-bot-master-bitty\src\main\resources" />
       <recent name="C:\Users\lavre\Desktop\Бот\telegram-bot-master-bitty\src\main\resources\id" />
-      <recent name="C:\Users\lavre\Desktop\Бот\telegram-bot-master-bitty\src" />
     </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="presentation.controllers" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.telegram-bot-master-bitty [clean]">
-    <configuration name="telegram-bot-master-bitty [assemble build buildDependents buildNeeded classes clean jar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.7-AM-cringe [clean build]">
+    <configuration name="MainController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="presentation.controllers.MainController" />
+      <module name="telegram-bot-master-bitty.main" />
+      <option name="PROGRAM_PARAMETERS" value="--stacktrace" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="presentation.controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="7-AM-cringe [clean build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -136,13 +154,8 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="assemble" />
-            <option value="build" />
-            <option value="buildDependents" />
-            <option value="buildNeeded" />
-            <option value="classes" />
             <option value="clean" />
-            <option value="jar" />
+            <option value="build" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -220,35 +233,20 @@
       <ForceTestExec>false</ForceTestExec>
       <method v="2" />
     </configuration>
-    <configuration name="telegram-bot-master-bitty [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="run" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>false</ForceTestExec>
-      <method v="2" />
-    </configuration>
+    <list>
+      <item itemvalue="Application.MainController" />
+      <item itemvalue="Gradle.7-AM-cringe [clean build]" />
+      <item itemvalue="Gradle.telegram-bot-master-bitty [build clean]" />
+      <item itemvalue="Gradle.telegram-bot-master-bitty [build]" />
+      <item itemvalue="Gradle.telegram-bot-master-bitty [clean]" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.7-AM-cringe [clean build]" />
         <item itemvalue="Gradle.telegram-bot-master-bitty [clean]" />
         <item itemvalue="Gradle.telegram-bot-master-bitty [build]" />
         <item itemvalue="Gradle.telegram-bot-master-bitty [build clean]" />
-        <item itemvalue="Gradle.telegram-bot-master-bitty [run]" />
-        <item itemvalue="Gradle.telegram-bot-master-bitty [assemble build buildDependents buildNeeded classes clean jar]" />
+        <item itemvalue="Application.MainController" />
       </list>
     </recent_temporary>
   </component>
@@ -279,6 +277,9 @@
       <workItem from="1681333220992" duration="48000" />
       <workItem from="1690301848016" duration="1844000" />
       <workItem from="1690341892840" duration="35401000" />
+      <workItem from="1690435769247" duration="15130000" />
+      <workItem from="1690457481032" duration="140000" />
+      <workItem from="1690457632308" duration="3377000" />
     </task>
     <task id="LOCAL-00001" summary="make it more OOP">
       <option name="closed" value="true" />

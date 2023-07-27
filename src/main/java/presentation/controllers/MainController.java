@@ -10,6 +10,7 @@ import org.telegram.telegrambots.meta.TelegramBotsApi;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
 
+import java.io.File;
 import java.io.IOException;
 import java.security.GeneralSecurityException;
 import java.util.ArrayList;
@@ -18,8 +19,6 @@ import java.util.List;
 public class MainController {
     public static void main(String[] args) throws TelegramApiException, GeneralSecurityException, IOException {
         TelegramBot bot = new TelegramBot();
-
-        //String credentialsFilePath = "client_secret_622097366523-9m4v33a80bglu0ah7v3bdlgkdtlkgmnp.apps.googleusercontent.com.json";
         DriveApiClientImpl driveApiClient = new DriveApiClientImpl();
         ImageService imageService = new ImageService(bot, driveApiClient);
         CommandController commandController = new CommandController();
@@ -31,13 +30,46 @@ public class MainController {
             e.printStackTrace();
         }
 
-        DayTime scheduledTime = new DayTime(7, 0);
-        ScheduleService.scheduleTaskAt(() -> {
-            // Get the list of chatIds where you want to send the images.
-            List<String> chatIds = new ArrayList<>(commandController.getChatIds());
-            imageService.sendImagesToTelegram(chatIds);
+        DayTime scheduledTime = new DayTime(9, 33);
+        ScheduleService.scheduleTaskAt(new Runnable() {
+            @Override
+            public void run() {
+                List<String> chatIds = new ArrayList<>(commandController.getChatIds());
+                imageService.sendImagesToTelegram(chatIds);
+            }
         }, scheduledTime);
-
-        // Rest of your code for initializing other services and starting your application.
     }
 }
+
+//public class MainController {
+//    public static void main(String[] args) throws TelegramApiException, GeneralSecurityException, IOException {
+//        // Define the file path to the credentials JSON file
+//        String fileName = "client_secret.json";
+//        String workingDirectory = System.getProperty("user.dir");
+//        String filePath = workingDirectory + File.separator + fileName;
+//
+//        // Create the DriveApiClientImpl instance with the file path
+//        DriveApiClientImpl driveApiClient = new DriveApiClientImpl(filePath);
+//
+//        // Rest of your code remains unchanged
+//        TelegramBot bot = new TelegramBot(driveApiClient);
+//        ImageService imageService = new ImageService(bot, driveApiClient);
+//        CommandController commandController = new CommandController();
+//
+//        TelegramBotsApi botsApi = new TelegramBotsApi(DefaultBotSession.class);
+//        try {
+//            botsApi.registerBot(bot);
+//        } catch (TelegramApiException e) {
+//            e.printStackTrace();
+//        }
+//
+//        DayTime scheduledTime = new DayTime(9, 33);
+//        ScheduleService.scheduleTaskAt(new Runnable() {
+//            @Override
+//            public void run() {
+//                List<String> chatIds = new ArrayList<>(commandController.getChatIds());
+//                imageService.sendImagesToTelegram(chatIds);
+//            }
+//        }, scheduledTime);
+//    }
+//}

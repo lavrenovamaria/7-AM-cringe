@@ -10,8 +10,17 @@ repositories {
     mavenCentral()
 }
 
+sourceSets {
+    main {
+        resources {
+            srcDirs = ['src/main/resources']
+        }
+    }
+}
+
+
 application {
-    mainClassName = 'org.telegram.bot.engine.MainClass'
+    mainClassName = 'presentation.controllers.MainController'
 }
 
 

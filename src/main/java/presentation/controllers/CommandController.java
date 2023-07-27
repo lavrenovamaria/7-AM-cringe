@@ -24,16 +24,6 @@ public class CommandController {
         chatIds = new HashSet<>();
     }
 
-//    public void handleCommand(Update update) {
-//        if (update.hasMessage() && update.getMessage().hasText()) {
-//            String command = update.getMessage().getText();
-//            CommandHandler handler = commandHandlers.get(command);
-//            if (handler != null) {
-//                handler.handleCommand(update);
-//            }
-//        }
-//    }
-
     public void handleCommand(Update update) throws GeneralSecurityException, IOException {
         if (update.hasMessage() && update.getMessage().hasText()) {
             String command = update.getMessage().getText();
@@ -42,7 +32,6 @@ public class CommandController {
                 handler.handleCommand(update);
             }
 
-            // If the command is to start the bot, add the chatId to the set
             if ("/start".equals(command)) {
                 String chatId = update.getMessage().getChatId().toString();
                 chatIds.add(chatId);

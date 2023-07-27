@@ -11,7 +11,6 @@ public class StartCommandHandler implements CommandHandler {
 
     @Override
     public void handleCommand(Update update) throws GeneralSecurityException, IOException {
-        // Send a message to the user.
         String chatId = update.getMessage().getChat().getId().toString();
         String response = "Welcome to the bot!";
 
