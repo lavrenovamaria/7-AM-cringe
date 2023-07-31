@@ -10,6 +10,10 @@ repositories {
     mavenCentral()
 }
 
+configurations {
+    customResources
+}
+
 sourceSets {
     main {
         resources {
@@ -19,12 +23,14 @@ sourceSets {
 }
 
 
+
 application {
     mainClassName = 'presentation.controllers.MainController'
 }
 
 
 dependencies {
+    customResources files('src/main/resources')
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
     implementation 'com.github.pengrad:java-telegram-bot-api:4.6.0'
@@ -43,6 +49,8 @@ dependencies {
 
 jar {
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    from sourceSets.main.output
+    from configurations.customResources
     manifest {
         attributes 'Main-Class': application.mainClassName
     }
@@ -50,8 +58,6 @@ jar {
         configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
     }
 }
-
-
 
 test {
     useJUnitPlatform()

@@ -1,7 +1,5 @@
 package presentation.controllers;
 
-
-
 import org.telegram.telegrambots.meta.api.objects.Update;
 
 import java.io.IOException;
@@ -17,11 +15,11 @@ public class CommandController {
 
     public CommandController() {
         commandHandlers = new HashMap<>();
-        commandHandlers.put("/start", new StartCommandHandler());
-        commandHandlers.put("/stop", new StopCommandHandler());
-        // Add other command handlers if needed.
-
         chatIds = new HashSet<>();
+    }
+
+    public void registerCommand(String command, CommandHandler handler) {
+        commandHandlers.put(command, handler);
     }
 
     public void handleCommand(Update update) throws GeneralSecurityException, IOException {
