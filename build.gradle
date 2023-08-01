@@ -51,6 +51,10 @@ jar {
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     from sourceSets.main.output
     from configurations.customResources
+    from("src/main/resources") {
+        include "client_secret.json"
+        into "META-INF/resources"
+    }
     manifest {
         attributes 'Main-Class': application.mainClassName
     }
@@ -58,6 +62,7 @@ jar {
         configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
     }
 }
+
 
 test {
     useJUnitPlatform()

@@ -29,7 +29,6 @@ public class CommandController {
             if (handler != null) {
                 handler.handleCommand(update);
             }
-
             if ("/start".equals(command)) {
                 String chatId = update.getMessage().getChatId().toString();
                 chatIds.add(chatId);

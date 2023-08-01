@@ -23,17 +23,16 @@ public class TelegramBot extends TelegramLongPollingBot {
 
     @Override
     public String getBotUsername() {
-        return "MyIttyBittyBot";
+        return "Your bot name";
     }
 
     @Override
     public String getBotToken() {
-        return "6020628537:AAHmE6xKAoysdbB9QlOHinZAH2q95GahjYg";
+        return "Your bot token";
     }
 
     @Override
     public void onUpdateReceived(Update update) {
-        // Implement the handling of updates here
         TelegramBotHandler.handleUpdate(this, update);
     }
 
@@ -45,20 +44,6 @@ public class TelegramBot extends TelegramLongPollingBot {
         try {
             execute(sendMessage);
         } catch (TelegramApiException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void sendPhoto(String chatId, String caption, File photoFile) {
-        SendPhoto sendPhoto = new SendPhoto();
-        sendPhoto.setChatId(chatId);
-        sendPhoto.setCaption(caption);
-
-        try (InputStream inputStream = new FileInputStream(photoFile.getName())) {
-            InputFile inputFile = new InputFile(inputStream, photoFile.getName());
-            sendPhoto.setPhoto(inputFile);
-            execute(sendPhoto);
-        } catch (IOException | TelegramApiException e) {
             e.printStackTrace();
         }
     }

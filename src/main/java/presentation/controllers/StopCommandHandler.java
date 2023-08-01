@@ -15,7 +15,7 @@ public class StopCommandHandler implements CommandHandler {
     }
 
     @Override
-    public void handleCommand(Update update) throws GeneralSecurityException, IOException {
+    public void handleCommand(Update update) {
         String chatId = update.getMessage().getChat().getId().toString();
         String response = "Bye!";
         bot.sendMessage(chatId, response);

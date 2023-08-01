@@ -18,11 +18,10 @@ import java.util.List;
 import java.io.InputStream;
 
 public class DriveApiClientImpl implements DriveApiClient {
-    private static final String PICTURES_FOLDER_ID = "1qAB2GzEa9Il_hYDjb1ddJ2kUhDQDAGmv";
+    private static final String PICTURES_FOLDER_ID = "Your Google Drive Folder";
 
     private GoogleCredentials credentials;
     private Drive drive;
-
 
     public DriveApiClientImpl(String filePath) throws IOException, GeneralSecurityException {
 

@@ -26,7 +26,6 @@ public class ImageService {
         this.driveApiClient = driveApiClient;
     }
 
-
     public void sendImagesToTelegram(List<String> chatIds) {
         try {
             List<File> imageFiles = driveApiClient.getImagesFromDrive();
@@ -45,7 +44,6 @@ public class ImageService {
             e.printStackTrace();
         }
     }
-
 
     private DriveFile downloadImageFile(File imageFile) throws IOException {
         String fileName = imageFile.getName();
@@ -67,7 +65,7 @@ public class ImageService {
             case Calendar.FRIDAY -> "Пятничка, ура! Посылаю вам позитивную энергию и мысли для яркого и прекрасного дня.";
             case Calendar.SATURDAY -> "Желаю вам хорошего выходного дня!";
             case Calendar.SUNDAY -> "Добречкого утречка воскресенья";
-            default -> "Доброе утро сладушки-оладушки!"; // Default message if the day of week is not recognized.
+            default -> "Доброе утро сладушки-оладушки!";
         };
     }
 }

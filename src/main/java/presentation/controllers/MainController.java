@@ -10,8 +10,7 @@ import org.telegram.telegrambots.meta.TelegramBotsApi;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.security.GeneralSecurityException;
 import java.util.ArrayList;
 import java.util.List;
@@ -19,11 +18,31 @@ import java.util.List;
 public class MainController {
     public static void main(String[] args) throws TelegramApiException, GeneralSecurityException, IOException {
 
-        String fileName = "src/main/resources/client_secret.json";
-        String workingDirectory = System.getProperty("user.dir");
-        String filePath = workingDirectory + File.separator + fileName;
+        String fileName = "ClientSecret.json";
+        InputStream inputStream = MainController.class.getClassLoader().getResourceAsStream(fileName);
+        if (inputStream == null) {
+            throw new FileNotFoundException("File not found: " + fileName);
+        }
 
-        DriveApiClient driveApiClient = new DriveApiClientImpl(filePath);
+        // Read the contents of the InputStream into a String
+        StringBuilder stringBuilder = new StringBuilder();
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                stringBuilder.append(line);
+            }
+        }
+
+        String fileContent = stringBuilder.toString();
+
+        // Save the JSON content to a file
+        File tempFile = File.createTempFile("ClientSecret", ".json");
+        try (FileWriter fileWriter = new FileWriter(tempFile)) {
+            fileWriter.write(fileContent);
+        }
+
+        // TempFile path to create the DriveApiClientImpl
+        DriveApiClient driveApiClient = new DriveApiClientImpl(tempFile.getAbsolutePath());
 
         CommandController commandController = new CommandController();
 
