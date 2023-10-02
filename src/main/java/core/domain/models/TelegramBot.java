@@ -12,23 +12,33 @@ import presentation.controllers.CommandController;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 public class TelegramBot extends TelegramLongPollingBot {
 
     private final CommandController commandController;
+    private final ScheduledExecutorService scheduler;
 
     public TelegramBot(CommandController commandController) {
         this.commandController = commandController;
+        this.scheduler = Executors.newScheduledThreadPool(1); // Create a single-threaded scheduler
     }
+
+
+//    public TelegramBot(CommandController commandController) {
+//        this.commandController = commandController;
+//    }
 
     @Override
     public String getBotUsername() {
-        return "Your bot name";
+        return "YourBotName";
     }
 
     @Override
     public String getBotToken() {
-        return "Your bot token";
+        return "YourToken";
     }
 
     @Override
@@ -52,6 +62,7 @@ public class TelegramBot extends TelegramLongPollingBot {
         return commandController;
     }
 
+
     public void sendPhoto(String chatId, String message, String fileName, InputStream inputStream) {
         SendPhoto sendPhoto = new SendPhoto();
         sendPhoto.setChatId(chatId);
@@ -66,4 +77,5 @@ public class TelegramBot extends TelegramLongPollingBot {
             e.printStackTrace();
         }
     }
+
 }

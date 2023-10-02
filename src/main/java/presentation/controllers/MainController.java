@@ -16,9 +16,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainController {
-    public static void main(String[] args) throws TelegramApiException, GeneralSecurityException, IOException {
+    public static void main(String[] args) throws TelegramApiException, GeneralSecurityException, IOException, InterruptedException {
 
-        String fileName = "ClientSecret.json";
+        String fileName = "client_secret.json";
         InputStream inputStream = MainController.class.getClassLoader().getResourceAsStream(fileName);
         if (inputStream == null) {
             throw new FileNotFoundException("File not found: " + fileName);
@@ -36,7 +36,7 @@ public class MainController {
         String fileContent = stringBuilder.toString();
 
         // Save the JSON content to a file
-        File tempFile = File.createTempFile("ClientSecret", ".json");
+        File tempFile = File.createTempFile("client_secret", ".json");
         try (FileWriter fileWriter = new FileWriter(tempFile)) {
             fileWriter.write(fileContent);
         }
@@ -60,7 +60,7 @@ public class MainController {
             e.printStackTrace();
         }
 
-        DayTime scheduledTime = new DayTime(5, 00);
+        DayTime scheduledTime = new DayTime(5, 0);
         ScheduleService.scheduleTaskAt(() -> {
             List<String> chatIds = new ArrayList<>(commandController.getChatIds());
             imageService.sendImagesToTelegram(chatIds);
